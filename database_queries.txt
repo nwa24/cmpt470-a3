@@ -1,0 +1,10 @@
+CREATE TABLE rectangles (
+	rectangle_id INT NOT NULL AUTO_INCREMENT,
+	width INT NOT NULL,
+	height int NOT NULL,
+	colour varchar(255) NOT NULL,
+	border_style varchar(255) NOT NULL,
+	border_colour varchar(255) NOT NULL,
+	PRIMARY KEY (rectangle_id))
+
+  
