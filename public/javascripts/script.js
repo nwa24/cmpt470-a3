@@ -98,15 +98,23 @@ function updateRectangle() {
         );
       } else {
         const id = res.data.id;
-        const updatedRectangle = res.data.rectangle;
-        //prettier-ignore
-        $(`#${id} > div`).css({
-        'width': `${updatedRectangle.width}px`,
-        'height:': `${updatedRectangle.height}px`,
-        'background-color': `${updatedRectangle.colour}`,
-        'border-style': `${updatedRectangle.borderStyle}`,
-        'border-color': `${updatedRectangle.borderColour}`,
-      });
+        const {
+          width,
+          height,
+          colour,
+          border_style,
+          border_colour,
+        } = res.data.rectangle;
+        const rectangle = {
+          rectangle_id: id,
+          width: width,
+          height: height,
+          colour: colour,
+          borderStyle: border_style,
+          borderColour: border_colour,
+        };
+        document.getElementById(id).remove();
+        addRectangleToPage(rectangle);
       }
     })
     .catch((err) => {
@@ -147,18 +155,21 @@ function createAreaText(rectangle) {
   const areaText = document.createElement('p');
   const area = rectangle.width * rectangle.height;
   areaText.innerHTML = `Area: ${area.toString()}`;
+  areaText.id = 'area';
   return areaText;
 }
 
 function createIdText(rectangle) {
   const idText = document.createElement('p');
   idText.innerHTML = `ID: ${rectangle.rectangle_id}`;
+  idText.id = 'id';
   return idText;
 }
 
 function createPerimeterText(rectangle) {
   const perimeterText = document.createElement('p');
-  const perimeter = 2 * (rectangle.width + rectangle.height);
+  const perimeter = 2 * (Number(rectangle.width) + Number(rectangle.height));
   perimeterText.innerHTML = `Perimeter: ${perimeter.toString()}`;
+  perimeterText.id = 'perimeter';
   return perimeterText;
 }
