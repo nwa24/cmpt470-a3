@@ -36,6 +36,7 @@ function addRectangle() {
     .catch((err) => {
       $(`<p class="errorMessage">${err}<p>`).insertBefore('#displayRectangles');
     });
+  $('.addRectangle').trigger('reset');
 }
 
 function deleteRectangle() {
@@ -54,10 +55,10 @@ function deleteRectangle() {
     .catch((err) => {
       $(`<p class="errorMessage">${err}<p>`).insertBefore('#displayRectangles');
     });
+  $('.deleteRectangle').trigger('reset');
 }
 
 function deleteAllRectangles() {
-  console.log('delete all rectangles');
   axios
     .delete('/rectangles/deleteAll')
     .then((res) => {
@@ -68,6 +69,7 @@ function deleteAllRectangles() {
     .catch((err) => {
       $(`<p class="errorMessage">${err}<p>`).insertBefore('#displayRectangles');
     });
+  $('.deleteRectangle').trigger('reset');
 }
 
 function updateRectangle() {
@@ -110,6 +112,7 @@ function updateRectangle() {
     .catch((err) => {
       $(`<p class="errorMessage">${err}<p>`).insertBefore('#displayRectangles');
     });
+  $('.updateRectangle').trigger('reset');
 }
 
 function addRectangleToPage(rectangle) {

@@ -9,7 +9,7 @@ const indexRouter = require('./routes/index');
 const rectangleRouter = require('./routes/rectangles');
 const dbConfig = require('./config/db_config');
 
-const PORT = process.env.port || 5000;
+const PORT = process.env.port || 80;
 const app = express();
 
 app.use(morgan('dev'));

@@ -1,7 +1,7 @@
 module.exports = {
-  host: '35.223.144.178',
-  user: 'test_remote',
-  password: 'test_remote',
+  host: '10.128.0.4',
+  user: 'debian-sys-maint',
+  password: 'CwnSSsmOHbY2Zdzk',
   database: 'asn',
   dialect: 'mysql',
 };

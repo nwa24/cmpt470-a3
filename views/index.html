@@ -16,7 +16,7 @@
     <title>CMPT 470 Assignment 3/4</title>
   </head>
   <body>
-    <form class="addRectangle" onsubmit="addRectangle();">
+    <form class="addRectangle">
       <fieldset>
         <legend>Add Rectangles</legend>
         <section class="form-group">
@@ -81,11 +81,16 @@
           />
         </section>
         <br />
-        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input
+          type="button"
+          value="Submit"
+          class="btn btn-primary"
+          onclick="addRectangle();"
+        />
       </fieldset>
     </form>
 
-    <form class="deleteRectangle" onsubmit="deleteRectangle();">
+    <form class="deleteRectangle">
       <fieldset>
         <legend>Delete Rectangle</legend>
         <section class="form-group">
@@ -98,18 +103,16 @@
             required
           />
         </section>
-        <input type="submit" value="Delete" class="btn btn-primary" />
-        <button
-          id="deleteAll"
-          onclick="deleteAllRectangles();"
-          class="btn btn-secondary"
-        >
-          Delete All
-        </button>
+        <input
+          type="button"
+          value="Delete"
+          class="btn btn-primary"
+          onclick="deleteRectangle();"
+        />
       </fieldset>
     </form>
 
-    <form class="updateRectangle" onsubmit="updateRectangle();">
+    <form class="updateRectangle">
       <fieldset>
         <legend>Update Rectangle</legend>
         <section class="form-group">
@@ -131,6 +134,9 @@
             class="form-control form-control-sm"
             required
           />
+          <small id="widthInputHelp" class="form-text text-muted">
+            Units are in pixels
+          </small>
         </section>
         <section class="form-group">
           <label for="updateRectangleHeight">Height:</label>
@@ -141,6 +147,9 @@
             class="form-control form-control-sm"
             required
           />
+          <small id="heightInputHelp" class="form-text text-muted">
+            Units are in pixels
+          </small>
         </section>
         <section class="form-group">
           <label for="updateRectangleColour">Colour:</label>
@@ -177,9 +186,21 @@
             required
           />
         </section>
-        <input type="submit" value="Update" class="btn btn-primary" />
+        <input
+          type="button"
+          value="Update"
+          class="btn btn-primary"
+          onclick="updateRectangle();"
+        />
       </fieldset>
     </form>
+    <button
+      id="deleteAll"
+      onclick="deleteAllRectangles();"
+      class="btn btn-secondary"
+    >
+      Delete All
+    </button>
 
     <section id="displayRectangles"></section>
   </body>

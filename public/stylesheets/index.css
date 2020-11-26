@@ -39,3 +39,9 @@
   justify-content: space-evenly;
   padding-bottom: 5rem;
 }
+
+#deleteAll {
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+}
